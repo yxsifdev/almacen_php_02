@@ -66,6 +66,8 @@
         <input type="text" id="nombre" name="nombre"><br>
         <label for="apellido">Apellido:</label><br>
         <input type="text" id="apellido" name="apellido"><br>
+        <label for="genero">Genero:</label><br>
+        <input type="text" id="genero" name="genero"><br>
         <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
         <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
         <label for="fecha_ingreso">Fecha de Ingreso:</label><br>
@@ -83,11 +85,12 @@ require 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $apellido = $conn->real_escape_string($_POST['apellido']);
+    $genero = $conn->real_escape_string($_POST['genero']);
     $fecha_nacimiento = $conn->real_escape_string($_POST['fecha_nacimiento']);
     $fecha_ingreso = $conn->real_escape_string($_POST['fecha_ingreso']);
 
     // Consulta para insertar un nuevo empleado
-    $sql_insert = "INSERT INTO empleados (nombre, apellido, fecha_nacimiento, fecha_ingreso) VALUES ('$nombre', '$apellido', '$fecha_nacimiento', '$fecha_ingreso')";
+    $sql_insert = "INSERT INTO empleados (nombre, apellido, genero, fecha_nacimiento, fecha_ingreso) VALUES ('$nombre', '$apellido', '$genero', '$fecha_nacimiento', '$fecha_ingreso')";
     $resultado_insert = $conn->query($sql_insert);
 
     if ($resultado_insert) {
