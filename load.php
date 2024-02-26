@@ -9,7 +9,7 @@
 require 'config.php';
 
 /* Un arreglo de las columnas a mostrar en la tabla */
-$columns = ['no_emp', 'nombre', 'apellido', 'fecha_nacimiento', 'fecha_ingreso'];
+$columns = ['no_emp', 'nombre', 'apellido', 'genero', 'fecha_nacimiento', 'fecha_ingreso'];
 
 /* Nombre de la tabla */
 $table = "empleados";
@@ -93,6 +93,7 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['no_emp'] . '</td>';
         $output['data'] .= '<td>' . $row['nombre'] . '</td>';
         $output['data'] .= '<td>' . $row['apellido'] . '</td>';
+        $output['data'] .= '<td>' . $row['genero'] . '</td>';
         $output['data'] .= '<td>' . $row['fecha_nacimiento'] . '</td>';
         $output['data'] .= '<td>' . $row['fecha_ingreso'] . '</td>';
         $output['data'] .= '<td><a class="btn btn-warning btn-sm" href="editar.php?id=' . $row['no_emp'] . '">Editar</a></td>';
