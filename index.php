@@ -57,10 +57,9 @@
                             <th class="sort asc">Num. empleado</th>
                             <th class="sort asc">Nombre</th>
                             <th class="sort asc">Apellido</th>
+                            <th class="sort asc">Genero</th>
                             <th class="sort asc">Fecha nacimiento</th>
                             <th class="sort asc">Fecha ingreso</th>
-                            <th></th>
-                            <th></th>
                         </thead>
 
                         <!-- El id del cuerpo de la tabla. -->
