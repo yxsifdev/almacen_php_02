@@ -82,6 +82,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <input type="text" id="nombre" name="nombre" value="<?php echo $empleado['nombre']; ?>"><br>
                 <label for="apellido">Apellido:</label><br>
                 <input type="text" id="apellido" name="apellido" value="<?php echo $empleado['apellido']; ?>"><br>
+                <label for="genero">Genero:</label><br>
+                <input type="text" id="genero" name="genero" value="<?php echo $empleado['genero']; ?>"><br>
                 <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
                 <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $empleado['fecha_nacimiento']; ?>"><br>
                 <label for="fecha_ingreso">Fecha de Ingreso:</label><br>
@@ -105,11 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $conn->real_escape_string($_POST['id']);
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $apellido = $conn->real_escape_string($_POST['apellido']);
+    $genero = $conn->real_escape_string($_POST['genero']);
     $fecha_nacimiento = $conn->real_escape_string($_POST['fecha_nacimiento']);
     $fecha_ingreso = $conn->real_escape_string($_POST['fecha_ingreso']);
 
     // Consulta para actualizar los datos del empleado
-    $sql_update = "UPDATE empleados SET nombre = '$nombre', apellido = '$apellido', fecha_nacimiento = '$fecha_nacimiento', fecha_ingreso = '$fecha_ingreso' WHERE no_emp = '$id'";
+    $sql_update = "UPDATE empleados SET nombre = '$nombre', apellido = '$apellido', genero = '$genero', fecha_nacimiento = '$fecha_nacimiento', fecha_ingreso = '$fecha_ingreso' WHERE no_emp = '$id'";
     $resultado_update = $conn->query($sql_update);
 
     if ($resultado_update) {
